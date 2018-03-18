@@ -1,4 +1,8 @@
-﻿function killcortana {ps | ? {$_.Name -match "SearchUI"}}
+﻿#When using this you might want to monitor your processes so you 
+#can see when any process connected to "Cortana" will be suspended.
+#you can stop the script and it will stay this way until you restart.
+
+function killcortana {ps | ? {$_.Name -match "SearchUI"}}
 $counter = $null
 $kc = killcortana
 function killingcortana {
@@ -12,7 +16,7 @@ try {
 }
 } else {
 echo false
-$counter += 0
+$counter = 0
 killingcortana 
 }
 }
